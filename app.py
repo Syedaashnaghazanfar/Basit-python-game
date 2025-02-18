@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyOEMijMipF8Is24Mcv1888r",
+      "authorship_tag": "ABX9TyPDJ+bDc00gFWXS9h2JfhGm",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -23,100 +23,7 @@
         "colab_type": "text"
       },
       "source": [
-        "<a href=\"https://colab.research.google.com/github/Syedaashnaghazanfar/Basit-python-game/blob/main/streamlit.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "execution_count": 2,
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "collapsed": true,
-        "id": "Uo9ZRHWzHyIS",
-        "outputId": "9069c5e5-f1fd-4d49-d88a-f6e3cfeab2ca"
-      },
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "Requirement already satisfied: streamlit in /usr/local/lib/python3.11/dist-packages (1.42.1)\n",
-            "Requirement already satisfied: altair<6,>=4.0 in /usr/local/lib/python3.11/dist-packages (from streamlit) (5.5.0)\n",
-            "Requirement already satisfied: blinker<2,>=1.0.0 in /usr/local/lib/python3.11/dist-packages (from streamlit) (1.9.0)\n",
-            "Requirement already satisfied: cachetools<6,>=4.0 in /usr/local/lib/python3.11/dist-packages (from streamlit) (5.5.1)\n",
-            "Requirement already satisfied: click<9,>=7.0 in /usr/local/lib/python3.11/dist-packages (from streamlit) (8.1.8)\n",
-            "Requirement already satisfied: numpy<3,>=1.23 in /usr/local/lib/python3.11/dist-packages (from streamlit) (1.26.4)\n",
-            "Requirement already satisfied: packaging<25,>=20 in /usr/local/lib/python3.11/dist-packages (from streamlit) (24.2)\n",
-            "Requirement already satisfied: pandas<3,>=1.4.0 in /usr/local/lib/python3.11/dist-packages (from streamlit) (2.2.2)\n",
-            "Requirement already satisfied: pillow<12,>=7.1.0 in /usr/local/lib/python3.11/dist-packages (from streamlit) (11.1.0)\n",
-            "Requirement already satisfied: protobuf<6,>=3.20 in /usr/local/lib/python3.11/dist-packages (from streamlit) (4.25.6)\n",
-            "Requirement already satisfied: pyarrow>=7.0 in /usr/local/lib/python3.11/dist-packages (from streamlit) (17.0.0)\n",
-            "Requirement already satisfied: requests<3,>=2.27 in /usr/local/lib/python3.11/dist-packages (from streamlit) (2.32.3)\n",
-            "Requirement already satisfied: rich<14,>=10.14.0 in /usr/local/lib/python3.11/dist-packages (from streamlit) (13.9.4)\n",
-            "Requirement already satisfied: tenacity<10,>=8.1.0 in /usr/local/lib/python3.11/dist-packages (from streamlit) (9.0.0)\n",
-            "Requirement already satisfied: toml<2,>=0.10.1 in /usr/local/lib/python3.11/dist-packages (from streamlit) (0.10.2)\n",
-            "Requirement already satisfied: typing-extensions<5,>=4.4.0 in /usr/local/lib/python3.11/dist-packages (from streamlit) (4.12.2)\n",
-            "Requirement already satisfied: watchdog<7,>=2.1.5 in /usr/local/lib/python3.11/dist-packages (from streamlit) (6.0.0)\n",
-            "Requirement already satisfied: gitpython!=3.1.19,<4,>=3.0.7 in /usr/local/lib/python3.11/dist-packages (from streamlit) (3.1.44)\n",
-            "Requirement already satisfied: pydeck<1,>=0.8.0b4 in /usr/local/lib/python3.11/dist-packages (from streamlit) (0.9.1)\n",
-            "Requirement already satisfied: tornado<7,>=6.0.3 in /usr/local/lib/python3.11/dist-packages (from streamlit) (6.4.2)\n",
-            "Requirement already satisfied: jinja2 in /usr/local/lib/python3.11/dist-packages (from altair<6,>=4.0->streamlit) (3.1.5)\n",
-            "Requirement already satisfied: jsonschema>=3.0 in /usr/local/lib/python3.11/dist-packages (from altair<6,>=4.0->streamlit) (4.23.0)\n",
-            "Requirement already satisfied: narwhals>=1.14.2 in /usr/local/lib/python3.11/dist-packages (from altair<6,>=4.0->streamlit) (1.26.0)\n",
-            "Requirement already satisfied: gitdb<5,>=4.0.1 in /usr/local/lib/python3.11/dist-packages (from gitpython!=3.1.19,<4,>=3.0.7->streamlit) (4.0.12)\n",
-            "Requirement already satisfied: python-dateutil>=2.8.2 in /usr/local/lib/python3.11/dist-packages (from pandas<3,>=1.4.0->streamlit) (2.8.2)\n",
-            "Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.11/dist-packages (from pandas<3,>=1.4.0->streamlit) (2025.1)\n",
-            "Requirement already satisfied: tzdata>=2022.7 in /usr/local/lib/python3.11/dist-packages (from pandas<3,>=1.4.0->streamlit) (2025.1)\n",
-            "Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.11/dist-packages (from requests<3,>=2.27->streamlit) (3.4.1)\n",
-            "Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.11/dist-packages (from requests<3,>=2.27->streamlit) (3.10)\n",
-            "Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.11/dist-packages (from requests<3,>=2.27->streamlit) (2.3.0)\n",
-            "Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.11/dist-packages (from requests<3,>=2.27->streamlit) (2025.1.31)\n",
-            "Requirement already satisfied: markdown-it-py>=2.2.0 in /usr/local/lib/python3.11/dist-packages (from rich<14,>=10.14.0->streamlit) (3.0.0)\n",
-            "Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /usr/local/lib/python3.11/dist-packages (from rich<14,>=10.14.0->streamlit) (2.18.0)\n",
-            "Requirement already satisfied: smmap<6,>=3.0.1 in /usr/local/lib/python3.11/dist-packages (from gitdb<5,>=4.0.1->gitpython!=3.1.19,<4,>=3.0.7->streamlit) (5.0.2)\n",
-            "Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.11/dist-packages (from jinja2->altair<6,>=4.0->streamlit) (3.0.2)\n",
-            "Requirement already satisfied: attrs>=22.2.0 in /usr/local/lib/python3.11/dist-packages (from jsonschema>=3.0->altair<6,>=4.0->streamlit) (25.1.0)\n",
-            "Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /usr/local/lib/python3.11/dist-packages (from jsonschema>=3.0->altair<6,>=4.0->streamlit) (2024.10.1)\n",
-            "Requirement already satisfied: referencing>=0.28.4 in /usr/local/lib/python3.11/dist-packages (from jsonschema>=3.0->altair<6,>=4.0->streamlit) (0.36.2)\n",
-            "Requirement already satisfied: rpds-py>=0.7.1 in /usr/local/lib/python3.11/dist-packages (from jsonschema>=3.0->altair<6,>=4.0->streamlit) (0.22.3)\n",
-            "Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.11/dist-packages (from markdown-it-py>=2.2.0->rich<14,>=10.14.0->streamlit) (0.1.2)\n",
-            "Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.11/dist-packages (from python-dateutil>=2.8.2->pandas<3,>=1.4.0->streamlit) (1.17.0)\n"
-          ]
-        }
-      ],
-      "source": [
-        "!pip install streamlit"
-      ]
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "!pip install pandas\n"
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "collapsed": true,
-        "id": "OKhGJqIMIErT",
-        "outputId": "44c327ff-aefd-4f74-ba07-6080ea146f13"
-      },
-      "execution_count": 4,
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "Requirement already satisfied: pandas in /usr/local/lib/python3.11/dist-packages (2.2.2)\n",
-            "Requirement already satisfied: numpy>=1.23.2 in /usr/local/lib/python3.11/dist-packages (from pandas) (1.26.4)\n",
-            "Requirement already satisfied: python-dateutil>=2.8.2 in /usr/local/lib/python3.11/dist-packages (from pandas) (2.8.2)\n",
-            "Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.11/dist-packages (from pandas) (2025.1)\n",
-            "Requirement already satisfied: tzdata>=2022.7 in /usr/local/lib/python3.11/dist-packages (from pandas) (2025.1)\n",
-            "Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.11/dist-packages (from python-dateutil>=2.8.2->pandas) (1.17.0)\n"
-          ]
-        }
+        "<a href=\"https://colab.research.google.com/github/Syedaashnaghazanfar/Basit-python-game/blob/main/app.py\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
       ]
     },
     {
@@ -221,122 +128,15 @@
           "base_uri": "https://localhost:8080/"
         },
         "id": "3cVOluc-IMfm",
-        "outputId": "0005e648-cd64-4b19-9d64-c362c6c6bdb7"
+        "outputId": "79c348aa-7426-406a-af04-fb2fdc5e1d13"
       },
-      "execution_count": 10,
+      "execution_count": 13,
       "outputs": [
         {
           "output_type": "stream",
           "name": "stdout",
           "text": [
             "Overwriting app.py\n"
-          ]
-        }
-      ]
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "!pip install cloudflared"
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "6JZGjZYpI3Qs",
-        "outputId": "65b528bb-0a35-44d2-8283-31e1d1c02802"
-      },
-      "execution_count": 6,
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "Collecting cloudflared\n",
-            "  Downloading cloudflared-1.0.0.2.tar.gz (2.6 kB)\n",
-            "  Preparing metadata (setup.py) ... \u001b[?25l\u001b[?25hdone\n",
-            "Collecting setuptools_scm (from cloudflared)\n",
-            "  Downloading setuptools_scm-8.1.0-py3-none-any.whl.metadata (6.6 kB)\n",
-            "Requirement already satisfied: packaging>=20 in /usr/local/lib/python3.11/dist-packages (from setuptools_scm->cloudflared) (24.2)\n",
-            "Requirement already satisfied: setuptools in /usr/local/lib/python3.11/dist-packages (from setuptools_scm->cloudflared) (75.1.0)\n",
-            "Downloading setuptools_scm-8.1.0-py3-none-any.whl (43 kB)\n",
-            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m43.7/43.7 kB\u001b[0m \u001b[31m3.2 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
-            "\u001b[?25hBuilding wheels for collected packages: cloudflared\n",
-            "  Building wheel for cloudflared (setup.py) ... \u001b[?25l\u001b[?25hdone\n",
-            "  Created wheel for cloudflared: filename=cloudflared-1.0.0.2-py3-none-any.whl size=2984 sha256=32db8a6343adbfb2d6abac665844fa8f627a31b4b0ce8837e0f914a394b62d58\n",
-            "  Stored in directory: /root/.cache/pip/wheels/3c/9f/f1/ef5e36c9386d737ac05ab8714d611c430d79abe55d862ca2b7\n",
-            "Successfully built cloudflared\n",
-            "Installing collected packages: setuptools_scm, cloudflared\n",
-            "Successfully installed cloudflared-1.0.0.2 setuptools_scm-8.1.0\n"
-          ]
-        }
-      ]
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "!streamlit run app.py & npx cloudflared tunnel --url http://localhost:8501"
-      ],
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "zkAPFB0RI9Mf",
-        "outputId": "d1ce1e7c-0b02-41a4-b830-92d9a8e9ede0"
-      },
-      "execution_count": null,
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "\n",
-            "Collecting usage statistics. To deactivate, set browser.gatherUsageStats to false.\n",
-            "\u001b[0m\n",
-            "\u001b[1G\u001b[0K⠙\u001b[1G\u001b[0K⠹\u001b[1G\u001b[0K⠸\u001b[1G\u001b[0K⠼\u001b[0m\n",
-            "\u001b[34m\u001b[1m  You can now view your Streamlit app in your browser.\u001b[0m\n",
-            "\u001b[0m\n",
-            "\u001b[34m  Local URL: \u001b[0m\u001b[1mhttp://localhost:8501\u001b[0m\n",
-            "\u001b[34m  Network URL: \u001b[0m\u001b[1mhttp://172.28.0.12:8501\u001b[0m\n",
-            "\u001b[34m  External URL: \u001b[0m\u001b[1mhttp://34.125.105.14:8501\u001b[0m\n",
-            "\u001b[0m\n",
-            "\u001b[1G\u001b[0K⠴\u001b[1G\u001b[0K⠦\u001b[1G\u001b[0K⠧\u001b[1G\u001b[0K⠇\u001b[1G\u001b[0K⠏\u001b[1G\u001b[0K⠋\u001b[1G\u001b[0K\u001b[90m2025-02-18T22:29:27Z\u001b[0m \u001b[32mINF\u001b[0m Thank you for trying Cloudflare Tunnel. Doing so, without a Cloudflare account, is a quick way to experiment and try it out. However, be aware that these account-less Tunnels have no uptime guarantee, are subject to the Cloudflare Online Services Terms of Use (https://www.cloudflare.com/website-terms/), and Cloudflare reserves the right to investigate your use of Tunnels for violations of such terms. If you intend to use Tunnels in production you should use a pre-created named tunnel by following: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps\n",
-            "\u001b[90m2025-02-18T22:29:27Z\u001b[0m \u001b[32mINF\u001b[0m Requesting new quick Tunnel on trycloudflare.com...\n",
-            "\u001b[90m2025-02-18T22:29:31Z\u001b[0m \u001b[32mINF\u001b[0m +--------------------------------------------------------------------------------------------+\n",
-            "\u001b[90m2025-02-18T22:29:31Z\u001b[0m \u001b[32mINF\u001b[0m |  Your quick Tunnel has been created! Visit it at (it may take some time to be reachable):  |\n",
-            "\u001b[90m2025-02-18T22:29:31Z\u001b[0m \u001b[32mINF\u001b[0m |  https://occasion-since-vb-trans.trycloudflare.com                                         |\n",
-            "\u001b[90m2025-02-18T22:29:31Z\u001b[0m \u001b[32mINF\u001b[0m +--------------------------------------------------------------------------------------------+\n",
-            "\u001b[90m2025-02-18T22:29:31Z\u001b[0m \u001b[32mINF\u001b[0m Cannot determine default configuration path. No file [config.yml config.yaml] in [~/.cloudflared ~/.cloudflare-warp ~/cloudflare-warp /etc/cloudflared /usr/local/etc/cloudflared]\n",
-            "\u001b[90m2025-02-18T22:29:31Z\u001b[0m \u001b[32mINF\u001b[0m Version 2025.2.0 (Checksum cbd18c5a6dee084db7a55d761b91202e47e63ddbd18d0faff04ca96e56739b3f)\n",
-            "\u001b[90m2025-02-18T22:29:31Z\u001b[0m \u001b[32mINF\u001b[0m GOOS: linux, GOVersion: go1.22.10, GoArch: amd64\n",
-            "\u001b[90m2025-02-18T22:29:31Z\u001b[0m \u001b[32mINF\u001b[0m Settings: map[ha-connections:1 protocol:quic url:http://localhost:8501]\n",
-            "\u001b[90m2025-02-18T22:29:31Z\u001b[0m \u001b[32mINF\u001b[0m cloudflared will not automatically update when run from the shell. To enable auto-updates, run cloudflared as a service: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/run-tunnel/as-a-service/\n",
-            "\u001b[90m2025-02-18T22:29:31Z\u001b[0m \u001b[32mINF\u001b[0m Generated Connector ID: d2a34974-7719-459a-9d45-3c86de727d62\n",
-            "\u001b[90m2025-02-18T22:29:31Z\u001b[0m \u001b[32mINF\u001b[0m Initial protocol quic\n",
-            "\u001b[90m2025-02-18T22:29:31Z\u001b[0m \u001b[32mINF\u001b[0m ICMP proxy will use 172.28.0.12 as source for IPv4\n",
-            "\u001b[90m2025-02-18T22:29:31Z\u001b[0m \u001b[32mINF\u001b[0m ICMP proxy will use :: as source for IPv6\n",
-            "\u001b[90m2025-02-18T22:29:31Z\u001b[0m \u001b[32mINF\u001b[0m ICMP proxy will use 172.28.0.12 as source for IPv4\n",
-            "\u001b[90m2025-02-18T22:29:31Z\u001b[0m \u001b[32mINF\u001b[0m ICMP proxy will use :: as source for IPv6\n",
-            "\u001b[90m2025-02-18T22:29:31Z\u001b[0m \u001b[32mINF\u001b[0m Starting metrics server on 127.0.0.1:20241/metrics\n",
-            "\u001b[90m2025-02-18T22:29:31Z\u001b[0m \u001b[32mINF\u001b[0m Using [CurveID(4588) CurveID(25497) CurveP256] as curve preferences \u001b[36mconnIndex=\u001b[0m0 \u001b[36mevent=\u001b[0m0 \u001b[36mip=\u001b[0m198.41.192.7\n",
-            "2025/02/18 22:29:31 failed to sufficiently increase receive buffer size (was: 208 kiB, wanted: 7168 kiB, got: 416 kiB). See https://github.com/quic-go/quic-go/wiki/UDP-Buffer-Sizes for details.\n",
-            "\u001b[90m2025-02-18T22:29:32Z\u001b[0m \u001b[32mINF\u001b[0m Registered tunnel connection \u001b[36mconnIndex=\u001b[0m0 \u001b[36mconnection=\u001b[0m9a7316e8-2c4d-4c4f-be4a-7ef90ab4825b \u001b[36mevent=\u001b[0m0 \u001b[36mip=\u001b[0m198.41.192.7 \u001b[36mlocation=\u001b[0mlax09 \u001b[36mprotocol=\u001b[0mquic\n",
-            "\u001b[90m2025-02-18T22:29:50Z\u001b[0m \u001b[1m\u001b[31mERR\u001b[0m\u001b[0m  \u001b[31merror=\u001b[0m\u001b[31m\"stream 45 canceled by remote with error code 0\"\u001b[0m \u001b[36mconnIndex=\u001b[0m0 \u001b[36mevent=\u001b[0m1 \u001b[36mingressRule=\u001b[0m0 \u001b[36moriginService=\u001b[0mhttp://localhost:8501\n",
-            "\u001b[90m2025-02-18T22:29:50Z\u001b[0m \u001b[1m\u001b[31mERR\u001b[0m\u001b[0m Request failed \u001b[31merror=\u001b[0m\u001b[31m\"stream 45 canceled by remote with error code 0\"\u001b[0m \u001b[36mconnIndex=\u001b[0m0 \u001b[36mdest=\u001b[0mhttps://occasion-since-vb-trans.trycloudflare.com/static/media/SourceSansPro-Regular.DZLUzqI4.woff2 \u001b[36mevent=\u001b[0m0 \u001b[36mip=\u001b[0m198.41.192.7 \u001b[36mtype=\u001b[0mhttp\n",
-            "\u001b[90m2025-02-18T22:29:50Z\u001b[0m \u001b[1m\u001b[31mERR\u001b[0m\u001b[0m  \u001b[31merror=\u001b[0m\u001b[31m\"stream 41 canceled by remote with error code 0\"\u001b[0m \u001b[36mconnIndex=\u001b[0m0 \u001b[36mevent=\u001b[0m1 \u001b[36mingressRule=\u001b[0m0 \u001b[36moriginService=\u001b[0mhttp://localhost:8501\n",
-            "\u001b[90m2025-02-18T22:29:50Z\u001b[0m \u001b[1m\u001b[31mERR\u001b[0m\u001b[0m Request failed \u001b[31merror=\u001b[0m\u001b[31m\"stream 41 canceled by remote with error code 0\"\u001b[0m \u001b[36mconnIndex=\u001b[0m0 \u001b[36mdest=\u001b[0mhttps://occasion-since-vb-trans.trycloudflare.com/static/media/SourceSansPro-Bold.-6c9oR8J.woff2 \u001b[36mevent=\u001b[0m0 \u001b[36mip=\u001b[0m198.41.192.7 \u001b[36mtype=\u001b[0mhttp\n",
-            "\u001b[90m2025-02-18T22:29:50Z\u001b[0m \u001b[1m\u001b[31mERR\u001b[0m\u001b[0m  \u001b[31merror=\u001b[0m\u001b[31m\"stream 49 canceled by remote with error code 0\"\u001b[0m \u001b[36mconnIndex=\u001b[0m0 \u001b[36mevent=\u001b[0m1 \u001b[36mingressRule=\u001b[0m0 \u001b[36moriginService=\u001b[0mhttp://localhost:8501\n",
-            "\u001b[90m2025-02-18T22:29:50Z\u001b[0m \u001b[1m\u001b[31mERR\u001b[0m\u001b[0m Request failed \u001b[31merror=\u001b[0m\u001b[31m\"stream 49 canceled by remote with error code 0\"\u001b[0m \u001b[36mconnIndex=\u001b[0m0 \u001b[36mdest=\u001b[0mhttps://occasion-since-vb-trans.trycloudflare.com/static/media/SourceSansPro-SemiBold.sKQIyTMz.woff2 \u001b[36mevent=\u001b[0m0 \u001b[36mip=\u001b[0m198.41.192.7 \u001b[36mtype=\u001b[0mhttp\n",
-            "\u001b[90m2025-02-18T22:29:50Z\u001b[0m \u001b[1m\u001b[31mERR\u001b[0m\u001b[0m  \u001b[31merror=\u001b[0m\u001b[31m\"stream 57 canceled by remote with error code 0\"\u001b[0m \u001b[36mconnIndex=\u001b[0m0 \u001b[36mevent=\u001b[0m1 \u001b[36mingressRule=\u001b[0m0 \u001b[36moriginService=\u001b[0mhttp://localhost:8501\n",
-            "\u001b[90m2025-02-18T22:29:50Z\u001b[0m \u001b[1m\u001b[31mERR\u001b[0m\u001b[0m Request failed \u001b[31merror=\u001b[0m\u001b[31m\"stream 57 canceled by remote with error code 0\"\u001b[0m \u001b[36mconnIndex=\u001b[0m0 \u001b[36mdest=\u001b[0mhttps://occasion-since-vb-trans.trycloudflare.com/static/js/index.BNEeLL7s.js \u001b[36mevent=\u001b[0m0 \u001b[36mip=\u001b[0m198.41.192.7 \u001b[36mtype=\u001b[0mhttp\n",
-            "\u001b[90m2025-02-18T22:29:50Z\u001b[0m \u001b[1m\u001b[31mERR\u001b[0m\u001b[0m  \u001b[31merror=\u001b[0m\u001b[31m\"stream 61 canceled by remote with error code 0\"\u001b[0m \u001b[36mconnIndex=\u001b[0m0 \u001b[36mevent=\u001b[0m1 \u001b[36mingressRule=\u001b[0m0 \u001b[36moriginService=\u001b[0mhttp://localhost:8501\n",
-            "\u001b[90m2025-02-18T22:29:50Z\u001b[0m \u001b[1m\u001b[31mERR\u001b[0m\u001b[0m Request failed \u001b[31merror=\u001b[0m\u001b[31m\"stream 61 canceled by remote with error code 0\"\u001b[0m \u001b[36mconnIndex=\u001b[0m0 \u001b[36mdest=\u001b[0mhttps://occasion-since-vb-trans.trycloudflare.com/static/media/SourceSansPro-Bold.-6c9oR8J.woff2 \u001b[36mevent=\u001b[0m0 \u001b[36mip=\u001b[0m198.41.192.7 \u001b[36mtype=\u001b[0mhttp\n",
-            "\u001b[90m2025-02-18T22:29:50Z\u001b[0m \u001b[1m\u001b[31mERR\u001b[0m\u001b[0m  \u001b[31merror=\u001b[0m\u001b[31m\"stream 69 canceled by remote with error code 0\"\u001b[0m \u001b[36mconnIndex=\u001b[0m0 \u001b[36mevent=\u001b[0m1 \u001b[36mingressRule=\u001b[0m0 \u001b[36moriginService=\u001b[0mhttp://localhost:8501\n",
-            "\u001b[90m2025-02-18T22:29:50Z\u001b[0m \u001b[1m\u001b[31mERR\u001b[0m\u001b[0m Request failed \u001b[31merror=\u001b[0m\u001b[31m\"stream 69 canceled by remote with error code 0\"\u001b[0m \u001b[36mconnIndex=\u001b[0m0 \u001b[36mdest=\u001b[0mhttps://occasion-since-vb-trans.trycloudflare.com/static/media/SourceSansPro-Regular.DZLUzqI4.woff2 \u001b[36mevent=\u001b[0m0 \u001b[36mip=\u001b[0m198.41.192.7 \u001b[36mtype=\u001b[0mhttp\n",
-            "\u001b[90m2025-02-18T22:29:50Z\u001b[0m \u001b[1m\u001b[31mERR\u001b[0m\u001b[0m  \u001b[31merror=\u001b[0m\u001b[31m\"stream 77 canceled by remote with error code 0\"\u001b[0m \u001b[36mconnIndex=\u001b[0m0 \u001b[36mevent=\u001b[0m1 \u001b[36mingressRule=\u001b[0m0 \u001b[36moriginService=\u001b[0mhttp://localhost:8501\n",
-            "\u001b[90m2025-02-18T22:29:50Z\u001b[0m \u001b[1m\u001b[31mERR\u001b[0m\u001b[0m Request failed \u001b[31merror=\u001b[0m\u001b[31m\"stream 77 canceled by remote with error code 0\"\u001b[0m \u001b[36mconnIndex=\u001b[0m0 \u001b[36mdest=\u001b[0mhttps://occasion-since-vb-trans.trycloudflare.com/static/js/index.BNEeLL7s.js \u001b[36mevent=\u001b[0m0 \u001b[36mip=\u001b[0m198.41.192.7 \u001b[36mtype=\u001b[0mhttp\n",
-            "\u001b[90m2025-02-18T22:29:50Z\u001b[0m \u001b[1m\u001b[31mERR\u001b[0m\u001b[0m  \u001b[31merror=\u001b[0m\u001b[31m\"stream 73 canceled by remote with error code 0\"\u001b[0m \u001b[36mconnIndex=\u001b[0m0 \u001b[36mevent=\u001b[0m1 \u001b[36mingressRule=\u001b[0m0 \u001b[36moriginService=\u001b[0mhttp://localhost:8501\n",
-            "\u001b[90m2025-02-18T22:29:50Z\u001b[0m \u001b[1m\u001b[31mERR\u001b[0m\u001b[0m Request failed \u001b[31merror=\u001b[0m\u001b[31m\"stream 73 canceled by remote with error code 0\"\u001b[0m \u001b[36mconnIndex=\u001b[0m0 \u001b[36mdest=\u001b[0mhttps://occasion-since-vb-trans.trycloudflare.com/static/media/SourceSansPro-SemiBold.sKQIyTMz.woff2 \u001b[36mevent=\u001b[0m0 \u001b[36mip=\u001b[0m198.41.192.7 \u001b[36mtype=\u001b[0mhttp\n"
           ]
         }
       ]
